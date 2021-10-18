@@ -1,0 +1,25 @@
+<div class="wrapper">
+  <div class="status">
+    <ng-container *ngFor="let item of statusList">
+      <label [class.checked]="task?.status === item">
+        <input 
+          type="radio"
+          name="status"
+          [value]="item"
+          [ngModel]="task?.status"
+          (ngModelChange)="handleChangeStatus(item)"/> {{item}}
+      </label>
+    </ng-container>
+  </div>
+  <input 
+    class="text"
+    placeholder="task comment"
+    [ngModel]="task?.comment"
+    (ngModelChange)="handleChangeComment($event)" />
+  <div class="button">
+    <button class="update" (click)="handleUpdate()" [class]="disabled">update task</button>
+    <button class="delete" (click)="handleDelete()">
+      <i class="fas fa-trash-alt"></i>
+    </button>
+  </div>
+</div>

@@ -1,0 +1,30 @@
+<div class="sort">
+  <app-status-radio-button
+    [items]="statusList"
+    [taskLength]="tasks.length"
+    (checked)="changeStatus($event)"
+  ></app-status-radio-button>
+</div>
+
+<app-task-list
+  [tasks]="tasks"
+  (delete)="deleteTask($event)"
+>
+</app-task-list>
+
+<p
+  [class.hidden] = "allTasks.length === 0"
+  class="resetButton"
+  (click) = "resetTasks()"
+>
+  reset tasks
+  <i class="fas fa-redo"></i>
+</p>
+
+<div class="addTask">
+  <app-add-task-form
+    (add)="addTask($event)"
+    (onChange)="validateInputText($event)"
+    [disabled]="addTaskDisabled"
+  ></app-add-task-form>
+</div>

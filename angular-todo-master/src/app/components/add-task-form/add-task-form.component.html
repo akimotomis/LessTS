@@ -1,0 +1,14 @@
+<h2>add new task</h2>
+
+<div class="form">
+  <input
+    [ngModel]="text"
+    (ngModelChange)="handleChangeInput($event); text = $event"
+    placeholder="task comment"
+    (keydown.enter)="trigger($event)"
+    #inputText/>
+  <button
+    (click)="handleAddButton()"
+    [class]="disabled"
+    >add</button>
+</div>

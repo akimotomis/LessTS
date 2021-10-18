@@ -1,0 +1,19 @@
+<div class="wrapper">
+  <h2>Edit Task<span>ID: {{task?.id}}</span></h2>
+
+  <div class="editor">
+    <app-edit-form
+      [task]="task"
+      [disabled]="disabled"
+      (update)="updateTask()"
+      (delete)="deleteTask()"
+      (changeStatus)="task.status = $event"
+      (changeComment)="task.comment = $event"
+    ></app-edit-form>
+  </div>
+
+  <a class="back" routerLink="/">
+    <i class="fas fa-chevron-left"></i>
+    <span>back</span>
+  </a>
+</div>
