@@ -1,0 +1,20 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "angular-todo"
+		},
+		{
+			"path": "angular-todo-master"
+		},
+		{
+			"path": "HostingFirebase"
+		},
+		{
+			"path": "HostingHeroku"
+		}
+	],
+	"settings": {}
+}
